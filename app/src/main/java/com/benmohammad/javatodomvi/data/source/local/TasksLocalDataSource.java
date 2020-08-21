@@ -58,7 +58,7 @@ public class TasksLocalDataSource implements TasksDataSource {
         return new Task(title, description, itemId, isCompleted);
     }
 
-    public TasksLocalDataSource getInstance(@NonNull Context context,
+    public static TasksLocalDataSource getInstance(@NonNull Context context,
                                             @NonNull BaseSchedulerProvider schedulerProvider){
         if(INSTANCE == null) {
             INSTANCE = new TasksLocalDataSource(context, schedulerProvider);

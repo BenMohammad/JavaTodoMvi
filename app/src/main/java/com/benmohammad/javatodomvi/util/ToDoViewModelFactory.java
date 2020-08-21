@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.benmohammad.javatodomvi.injection.Injection;
+import com.benmohammad.javatodomvi.tasks.TasksActionProcessorHolder;
+import com.benmohammad.javatodomvi.tasks.TasksViewModel;
 
 
 public class ToDoViewModelFactory implements ViewModelProvider.Factory {
@@ -30,6 +33,13 @@ public class ToDoViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+        if(modelClass == TasksViewModel.class) {
+            return (T) new TasksViewModel(
+                    new TasksActionProcessorHolder(
+                            Injection.provideTasksRepository(applicationContext),
+                            Injection.provideSchedulerProvider()));
+        }
+
         throw new IllegalArgumentException("unknown model class: " + modelClass);
     }
 }
