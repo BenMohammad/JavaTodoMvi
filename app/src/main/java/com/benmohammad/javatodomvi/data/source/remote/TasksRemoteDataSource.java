@@ -87,7 +87,7 @@ public class TasksRemoteDataSource implements TasksDataSource {
     }
 
     @Override
-    public Completable clearCompletedTask() {
+    public Completable clearCompletedTasks() {
         Iterator<Map.Entry<String, Task>> it = TASKS_SERVICE_DATA.entrySet().iterator();
         while(it.hasNext()) {
             Map.Entry<String, Task> entry = it.next();

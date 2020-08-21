@@ -137,7 +137,7 @@ public class TasksLocalDataSource implements TasksDataSource {
     }
 
     @Override
-    public Completable clearCompletedTask() {
+    public Completable clearCompletedTasks() {
         String selection = COLUMN_NAME_COMPLETED + " LIKE ?";
         String[] selectionArgs = {"1"};
         databaseHelper.delete(TABLE_NAME, selection, selectionArgs);

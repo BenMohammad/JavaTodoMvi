@@ -23,7 +23,7 @@ public interface TasksDataSource {
     Completable completeTask(@NonNull String taskId);
     Completable activateTask(@NonNull Task task);
     Completable activateTask(@NonNull String taskId);
-    Completable clearCompletedTask();
+    Completable clearCompletedTasks();
     void refreshTask();
     void deleteAllTasks();
     Completable deleteTask(@NonNull String taskId);
