@@ -5,19 +5,19 @@ import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
 import com.benmohammad.javatodomvi.data.Task;
-import com.benmohammad.javatodomvi.data.source.remote.TasksRemoteDataSource;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import autovalue.shaded.com.google$.common.collect.$Table;
+
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
-import static autovalue.shaded.com.google$.common.base.$Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 
 public class TasksRepository implements TasksDataSource {
 
