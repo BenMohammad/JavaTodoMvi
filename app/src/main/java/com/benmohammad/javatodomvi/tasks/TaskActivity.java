@@ -1,14 +1,18 @@
-package com.benmohammad.javatodomvi;
+package com.benmohammad.javatodomvi.tasks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.benmohammad.javatodomvi.R;
+
+public class TaskActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.tasks_act);
+
+
     }
 }
