@@ -3,13 +3,14 @@ package com.benmohammad.javatodomvi.tasks;
 import androidx.annotation.Nullable;
 
 import com.benmohammad.javatodomvi.data.Task;
+import com.benmohammad.javatodomvi.mvibase.MviViewState;
 import com.google.auto.value.AutoValue;
 
 import java.util.Collections;
 import java.util.List;
 
 @AutoValue
-public abstract class TasksViewState {
+public abstract class TasksViewState implements MviViewState {
 
     public abstract boolean isLoading();
 
