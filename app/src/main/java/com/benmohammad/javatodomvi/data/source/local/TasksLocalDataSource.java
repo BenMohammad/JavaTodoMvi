@@ -106,7 +106,7 @@ public class TasksLocalDataSource implements TasksDataSource {
 
     @Override
     public Completable completeTask(@NonNull Task task) {
-        completeTask(task);
+        completeTask(task.getId());
         return null;
     }
 
