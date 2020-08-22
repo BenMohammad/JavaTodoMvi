@@ -217,13 +217,16 @@ public class TaskDetailFragment extends Fragment implements MviView<TaskDetailIn
         detailTitle.setText(title);
     }
 
+
     public void showTaskMarkedComplete() {
         Snackbar.make(getView(), getString(R.string.task_marked_complete), Snackbar.LENGTH_SHORT).show();
     }
 
+
     public void showTaskMarkedActive() {
         Snackbar.make(getView(), getString(R.string.task_marked_active), Snackbar.LENGTH_SHORT).show();
     }
+
 
     public void showMissingTask() {
         detailTitle.setText("");
