@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.benmohammad.javatodomvi.injection.Injection;
+import com.benmohammad.javatodomvi.taskdetail.TaskDetailActionProcessorHolder;
+import com.benmohammad.javatodomvi.taskdetail.TaskDetailViewModel;
 import com.benmohammad.javatodomvi.tasks.TasksActionProcessorHolder;
 import com.benmohammad.javatodomvi.tasks.TasksViewModel;
 
@@ -36,6 +38,11 @@ public class ToDoViewModelFactory implements ViewModelProvider.Factory {
         if(modelClass == TasksViewModel.class) {
             return (T) new TasksViewModel(
                     new TasksActionProcessorHolder(
+                            Injection.provideTasksRepository(applicationContext),
+                            Injection.provideSchedulerProvider()));
+        } else if(modelClass == TaskDetailViewModel.class) {
+            return (T) new TaskDetailViewModel(
+                    new TaskDetailActionProcessorHolder(
                             Injection.provideTasksRepository(applicationContext),
                             Injection.provideSchedulerProvider()));
         }
