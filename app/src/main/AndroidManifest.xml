@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".taskdetail.TaskDetailActivity"/>
         <activity android:name=".addedittask.AddEditTaskActivity"/>
+        <activity android:name=".stats.StatisticsActivity"/>
     </application>
 
 </manifest>

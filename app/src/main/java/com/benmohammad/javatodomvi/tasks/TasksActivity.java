@@ -7,10 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.benmohammad.javatodomvi.R;
+import com.benmohammad.javatodomvi.stats.StatisticsActivity;
 import com.benmohammad.javatodomvi.util.ActivityUtils;
 import com.google.android.material.navigation.NavigationView;
 
@@ -62,6 +64,8 @@ public class TasksActivity extends AppCompatActivity {
                     break;
 
                 case R.id.statistics_navigation_menu_item:
+                    Intent intent = new Intent(this, StatisticsActivity.class);
+                    startActivity(intent);
 
                     break;
                 default:
