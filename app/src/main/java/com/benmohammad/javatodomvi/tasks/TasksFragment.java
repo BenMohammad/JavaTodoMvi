@@ -120,6 +120,7 @@ public class TasksFragment extends Fragment implements MviView<TasksIntent, Task
                 ContextCompat.getColor(getActivity(), R.color.colorAccent)
         );
         swipeRefreshLayout.setScrollUpChild(listView);
+        setHasOptionsMenu(true);
         return root;
     }
 
