@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.benmohammad.javatodomvi.addedittask.AddEditTaskActionProcessorHolder;
 import com.benmohammad.javatodomvi.addedittask.AddEditTaskViewModel;
 import com.benmohammad.javatodomvi.injection.Injection;
+import com.benmohammad.javatodomvi.stats.StatisticsActionProcessorHolder;
+import com.benmohammad.javatodomvi.stats.StatisticsViewModel;
 import com.benmohammad.javatodomvi.taskdetail.TaskDetailActionProcessorHolder;
 import com.benmohammad.javatodomvi.taskdetail.TaskDetailViewModel;
 import com.benmohammad.javatodomvi.tasks.TasksActionProcessorHolder;
@@ -50,6 +52,11 @@ public class ToDoViewModelFactory implements ViewModelProvider.Factory {
         } else if (modelClass == AddEditTaskViewModel.class) {
             return (T) new AddEditTaskViewModel(
                     new AddEditTaskActionProcessorHolder(
+                            Injection.provideTasksRepository(applicationContext),
+                            Injection.provideSchedulerProvider()));
+        } else if(modelClass == StatisticsViewModel.class) {
+            return (T) new StatisticsViewModel(
+                    new StatisticsActionProcessorHolder(
                             Injection.provideTasksRepository(applicationContext),
                             Injection.provideSchedulerProvider()));
         }
